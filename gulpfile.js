@@ -29,19 +29,19 @@ gulp.task('sass', function() {
     return gulp.src('uncompressed/scss/*.scss')
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('assets'))
+    .pipe(gulp.dest('assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('assets/css'));
 });
 
 // Concatenate & Minify JS
-gulp.task('scripts', function() {
+gulp.task('js', function() {
     return gulp.src('uncompressed/js/*.js')
     .pipe(plumber({
         errorHandler: onError
     }))
-    .pipe(concat('assets/app.js'))
+    .pipe(concat('assets/js/app.js'))
     .pipe(gulp.dest(''))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
@@ -58,7 +58,7 @@ gulp.task('jslint', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
 
-    gulp.watch('uncompressed/js/*.js', ['scripts']);
+    gulp.watch('uncompressed/js/*.js', ['js']);
     gulp.watch('uncompressed/scss/*.scss', ['sass']);
     gutil.log('Watching source files for changes... Press ' + gutil.colors.cyan('CTRL + C') + ' to stop.');
 
