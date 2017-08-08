@@ -1,0 +1,108 @@
+// table{
+//  width:100%;
+// }
+
+th{
+    text-align:left;
+}
+
+// thead{
+//  display:block;
+//  position:fixed;
+//  top:0;
+//  left:0;
+//  width:100%;
+// }
+// tbody{
+//  display:block;
+//  padding-top:1em;
+// }
+
+.state_icon{
+    display:inline-block;
+    width:.8em;
+    height:.8em;
+    border:.2rem solid $black;
+    border-radius:50%;
+    background:$dark;
+    &.running{
+        border-color:$olive;
+    }
+}
+
+tbody tr{
+    cursor:pointer;
+    &:hover{
+        background:$bg_dark;
+    }
+}
+
+.cell_name{
+    // min-width:10em;
+
+}
+.cell_state{
+    // width:10%;
+
+}
+.cell_account{
+
+}
+.cell_datacenter{
+
+}
+.cell_cores{
+
+    text-align:right;   
+}
+.cell_cpu{
+    text-align:right;
+}
+.cell_memory{
+    text-align:right;
+}
+.cell_storage{
+    text-align:right;
+}
+
+table{
+    width:100%;
+    // max-width:100%;
+    padding:.5em;
+    border-collapse:collapse;
+}
+tr{
+    // padding-left:2em;
+}
+th,
+td{
+    white-space:nowrap;
+    padding:.2rem;
+    &:first-of-type{
+        padding-left:4em;
+    }
+    &:last-of-type{
+        padding-right:1em;
+    }
+    
+    // &.cell_name{width:16em;}
+    // &.cell_state{width:5em;}
+    &.cell_account{
+        width:20em;
+        max-width:4em;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
+    }
+    &.cell_datacenter{
+        width:20em;
+        max-width:4em;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
+    }
+    &.cell_cores{}
+    &.cell_cpu{}
+    &.cell_memory{}
+    &.cell_storage{}
+}
