@@ -1,6 +1,7 @@
-// table{
-//  width:100%;
-// }
+.table_task_wrapper{
+    width:100%;
+    overflow:hidden;
+}
 
 th{
     text-align:left;
@@ -22,11 +23,11 @@ th{
     display:inline-block;
     width:.8em;
     height:.8em;
-    border:.2rem solid $black;
+    border:.1rem solid $black;
     border-radius:50%;
     background:$dark;
     &.running{
-        border-color:$olive;
+        border-color:$green;
     }
 }
 
